@@ -3,11 +3,11 @@
 georeferended map. My code is better than my spelling.-->
 <html>
 <head>
-	<title>Code4Lib 2016 Web Map Workshop</title>
+	<title>Leaflet with WMS: Code4Lib 2016 Web Map Workshop</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Get Leaflet's CSS form their CDN -->
-	<link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 	<!-- A little style of our own -->
     <style type="text/css">
         #fullscreen {
@@ -44,7 +44,7 @@ georeferended map. My code is better than my spelling.-->
     	<div id="map"><!-- This is the elment in which leaflet will render the map --></div>
     </div>
 	<!-- Here we are using a hosted version of leaflet. You can also host it locally. -->
-	<script src="https://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 
 	<!-- And now the fun begins! -->
 	<script>
@@ -81,7 +81,7 @@ georeferended map. My code is better than my spelling.-->
 		// Here we are pulling the archival map from GeoServer using its WMS
         // service.
         var wmsLayer = L.tileLayer.wms('http://52.87.207.128:8080/geoserver/Code4Lib/wms', {
-            layers: 'Code4Lib:r291z', // GeoServer Workspace + layer name
+            layers: 'Code4Lib:r2fp0', // GeoServer Workspace + layer name
             format: 'image/png', // Image format
             transparent: true, // Change this to false and just see how bad it is
         }).addTo(map).setZIndex(10).getContainer();

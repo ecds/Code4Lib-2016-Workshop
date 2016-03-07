@@ -81,7 +81,7 @@ georeferended map. My code is better than my spelling.-->
 		// Here we are adding our own layer made up of static tiles on a file
 		// system. The tiles can be anywhere that is web accessable.
 		// In this example, the tiles are hosed on S3.
-		var archivalMap = L.tileLayer('/Users/jsvarne/data/Code4Lib-2016-Workshop/geotiffs/Sheet4/{z}/{x}/{y}.png', {
+		var archivalMap = L.tileLayer('https://s3.amazonaws.com/code4lib-2016/map-tiles/atlanta_1928_sheet45/{z}/{x}/{y}.png', {
             tms: true,
             attribution: 'Emory University'
         }).addTo(map).setZIndex(10).getContainer();
