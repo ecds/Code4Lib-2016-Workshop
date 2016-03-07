@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tiled WMS example</title>
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.5.0/ol.css" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.5.0/ol.js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+
+<div class="row-fluid">
+  <div class="span12">
+    <div id="map" class="map"></div>
+  </div>
+</div>
+
+</div>
+<script>
+var layers = [
+  new ol.layer.Tile({
+    source: new ol.source.MapQuest({layer: 'sat'})
+  }),
+  new ol.layer.Tile({
+    // extent: [-13884991, 2870341, -7455066, 6338219],
+    source: new ol.source.TileWMS({
+      url: 'http://52.87.207.128:8080/geoserver/wms',
+      params: {'LAYERS': 'Code4Lib:r291z', 'TILED': true},
+      serverType: 'geoserver'
+    })
+  })
+];
+var map = new ol.Map({
+  layers: layers,
+  target: 'map',
+  view: new ol.View({
+    //   projection: 'EPSG:4326',
+    center: ol.proj.fromLonLat([-84.371631,33.738808]),
+    zoom: 15
+  })
+});
+
+</script>
+</body>
+</html>

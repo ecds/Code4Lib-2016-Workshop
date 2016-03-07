@@ -78,15 +78,15 @@ georeferended map. My code is better than my spelling.-->
 			id: 'mapbox.streets'
 		}).addTo(map); // Adding to the `map` so it shows on initial load.
 
-		// Here we are adding our own layer made up of static tiles on a file
-		// system. The tiles can be anywhere that is web accessable.
-		// In this example, the tiles are hosed on S3.
-		var archivalMap = L.tileLayer('/Users/jsvarne/data/Code4Lib-2016-Workshop/geotiffs/Sheet4/{z}/{x}/{y}.png', {
-            tms: true,
-            attribution: 'Emory University'
+		// Here we are pulling the archival map from GeoServer using its WMS
+        // service.
+        var wmsLayer = L.tileLayer.wms('http://52.87.207.128:8080/geoserver/Code4Lib/wms', {
+            layers: 'Code4Lib:r2fp0', // GeoServer Workspace + layer name
+            format: 'image/png', // Image format
+            transparent: true, // Change this to false and just see how bad it is
         }).addTo(map).setZIndex(10).getContainer();
-		// Add an id to the archival map layer so we can manipulate it.
-		archivalMap.id += 'raster';
+        // Add an id to the archival map layer so we can manipulate it.
+        wmsLayer.id += 'raster';;
 
 		// This is a variable to group the OSM and satellite layers so we can
 		// toggle between them.
