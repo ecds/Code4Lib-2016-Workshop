@@ -7,6 +7,7 @@ GeoServer can reproject on-the-fly, but you lose some image quality and use serv
 * `-t_srs` is the desired (target) EPSG code.
 * `-r` is the resampling method. We've seen the best results using `average`. Run `man gdalwarp` to see the other options.
 * Lastly provide the paths to your original GeoTIFF and the path and name of your newly warped GeoTIFF.
+
 ###Syntax
 ```
 gdalwarp -s_srs <source ESPG> -t_srs <target EPSG> -r average </path/to/source/geo.tif> </path/to/new/geo.tif>
@@ -24,6 +25,7 @@ This improves load time and matches the tile size used by OpenStreetMap and Goog
 * `BLOCKXSIZE=XXX` the width of the tile
 * `BLOCKYSIZE=XXX` the height of the tile
 * Lastly provide the path of your temporary file (made in the previous step) and the path to what will be your fully processed GeoTIFF.
+
 ###Syntax
 *Note: we could reproject the map here but we would be overriding our original file.*
 ```
@@ -42,6 +44,7 @@ This step increases file size by about 25%.
 ###TODO Research these numbers a bit more
 * The list of numbers is the levels we want overviews for: Selecting a level value like 2 causes an overview level that is 1/2 the resolution (in each dimension) of the base layer to be computed.
 * Lastly, the path to the the GeoTIFF created in the previous step
+
 ###Syntax
 ```
 gdaladdo -r average </path/to/new.tif> 2 4 8 16 32
