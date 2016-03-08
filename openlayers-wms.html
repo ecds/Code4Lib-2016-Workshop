@@ -42,20 +42,20 @@
         <div id="fullscreen">
             <!-- Radiobuttons to switch the base map -->
             <form id='switchBase'>
-                <input type = "radio"
-                    name = "base"
-                    id = "osm-button"
-                    value = "osm"
-                    checked = "checked"
-                    onclick="switchBase(this.value)" />
-                <label for = "osm-button">Street</label>
-                <br />
-                <input type = "radio"
-                    name = "base"
-                    id = "satellite-button"
-                    value = "satellite"
-                    onclick="switchBase(this.value)" />
-                <label for = "satellite-button">Satellite</label>
+            <input type = "radio"
+                name = "base"
+                id = "osm-button"
+                value = "osm"
+                checked = "checked"
+                onclick="switchBase(this.value)" />
+            <label for = "osm-button">Street</label>
+            <br />
+            <input type = "radio"
+                name = "base"
+                id = "satellite-button"
+                value = "satellite"
+                onclick="switchBase(this.value)" />
+            <label for = "satellite-button">Satellite</label>
             </form>
             <!-- Opacity slider -->
             <input type="range"
@@ -67,57 +67,55 @@
                 oninput="changeOpacity(this.value)"
                 onchange="changeOpacity(this.value)" />
 
-
             <div id="map"><!-- div for the map --></div>
         </div>
-    <script>
+        <script>
 
-        // OpenStreetMap Layer
-        var osm = new ol.layer.Tile({
-            source: new ol.source.MapQuest({layer: 'osm'})
-        });
+            // OpenStreetMap Layer
+            var osm = new ol.layer.Tile({
+                source: new ol.source.MapQuest({layer: 'osm'})
+            });
 
-        // Satellite Layer
-        var satellite = new ol.layer.Tile({
-            source: new ol.source.MapQuest({layer: 'sat'})
-        });
+            // Satellite Layer
+            var satellite = new ol.layer.Tile({
+                source: new ol.source.MapQuest({layer: 'sat'})
+            });
 
-        // Our layer from GeoServer
-        // http://openlayers.org/en/v3.8.2/apidoc/ol.source.TileWMS.html
-        var wmsLayer = new ol.layer.Tile({
-            source: new ol.source.TileWMS({
-                url: 'http://52.87.207.128:8080/geoserver/wms',
-                params: {'LAYERS': 'Code4Lib:r291z', 'TILED': true},
-                serverType: 'geoserver' //http://openlayers.org/en/v3.8.2/apidoc/ol.source.wms.html#ServerType
-            })
-        });
+            // Our layer from GeoServer
+            // http://openlayers.org/en/v3.8.2/apidoc/ol.source.TileWMS.html
+            var wmsLayer = new ol.layer.Tile({
+                source: new ol.source.TileWMS({
+                    url: 'http://52.87.207.128:8080/geoserver/wms',
+                    params: {'LAYERS': 'Code4Lib:r291z', 'TILED': true},
+                    serverType: 'geoserver' //http://openlayers.org/en/v3.8.2/apidoc/ol.source.wms.html#ServerType
+                })
+            });
 
-        // Create the bassic map and add the layers.
-        var map = new ol.Map({
-            layers: [satellite, osm, wmsLayer],
-            target: 'map',
-            view: new ol.View({
-                center: ol.proj.fromLonLat([-84.371631,33.738808]),
-                zoom: 15
-            })
-        });
+            // Create the bassic map and add the layers.
+            var map = new ol.Map({
+                layers: [satellite, osm, wmsLayer],
+                target: 'map',
+                view: new ol.View({
+                    center: ol.proj.fromLonLat([-84.371631,33.738808]),
+                    zoom: 15
+                })
+            });
 
-    </script>
-    <!-- JavaScript to adjust the opacity -->
-    <script type="text/javascript">
-        // We're using the fancy new range input element and getting the valule of it
-        // and setting that as the opacity on the archival map.
-        function changeOpacity(val) {
-        wmsLayer.setProperties({opacity: val});
-        // document.getElementById("raster").style.opacity = val;
-    }
-    </script>
-    <!-- JavaScript to swap the base layers. OL 3 does not seem to have this built in. -->
-    <script type="text/javascript">
-        function switchBase(val){
-            // Toggle the visible boolean
-            osm.setVisible(!osm.getVisible());
-        }
-    </script>
+            </script>
+            <!-- JavaScript to adjust the opacity -->
+        <script type="text/javascript">
+            // We're using the fancy new range input element and getting the valule of it
+            // and setting that as the opacity on the archival map.
+            function changeOpacity(val) {
+                wmsLayer.setProperties({opacity: val});
+            }
+        </script>
+        <!-- JavaScript to swap the base layers. OL 3 does not seem to have this built in. -->
+        <script type="text/javascript">
+            function switchBase(val){
+                // Toggle the visible boolean
+                osm.setVisible(!osm.getVisible());
+            }
+        </script>
     </body>
 </html>

@@ -4,12 +4,12 @@
 curl -u admin:geoserver -v -XPOST -H 'Content-Type: application/xml'\
      -d <coverageStore> \
 			<title>Atlanta 1928 Sheet 45</title> \
-        <name>atlanta_1928_sheet45.tif</name> \
-         <workspace>Code4Lib</workspace> \
-         <enabled>true</enabled> \
-         <type>GeoTIFF</type> \
-         </coverageStore>' \
-         http://52.87.207.128:8080/geoserver/rest/workspaces/Code4Lib/coveragestores
+            <name>atlanta_1928_sheet45.tif</name> \
+            <workspace>Code4Lib</workspace> \
+            <enabled>true</enabled> \
+            <type>GeoTIFF</type> \
+    </coverageStore>' \
+    http://52.87.207.128:8080/geoserver/rest/workspaces/Code4Lib/coveragestores
 ```
 
 # Create a layer from the store
