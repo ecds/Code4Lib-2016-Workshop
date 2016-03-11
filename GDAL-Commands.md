@@ -1,5 +1,5 @@
 #GDAL Commands
-The following is the three step process to get a GeoTiff
+The following three step process will help a GeoTIFF display clearly at multiple zoom levels:
 ##gdalwarp
 In this step, you need to reproject your data from any other coordinate system into WGS84 Web Mercator (Auxiliary Sphere) (EPSG 3857).
 GeoServer can reproject on-the-fly, but you lose some image quality and use server resources for no real reason.
