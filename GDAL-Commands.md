@@ -53,15 +53,3 @@ gdaladdo -r average </path/to/new.tif> levels
 ```
 gdaladdo -r average /data/processed/atlanta_1928_sheet45.tif 2 4 8 16 32
 ```
-If you run `gdalingo </path/to/new.tif>` after this step you wll see somenting like:
-
-```
-Band 1 Block=256x256 Type=Byte, ColorInterp=Red
-  Overviews: 2960x2916, 1480x1458, 740x729, 370x365, 185x183
-Band 2 Block=256x256 Type=Byte, ColorInterp=Green
-  Overviews: 2960x2916, 1480x1458, 740x729, 370x365, 185x183
-Band 3 Block=256x256 Type=Byte, ColorInterp=Blue
-  Overviews: 2960x2916, 1480x1458, 740x729, 370x365, 185x183
-```
-The `Overviews` show how many pixels 256x256 represent in the original GeoTIFF.
-Our original GeoTIFF was 5920x5831 so the
