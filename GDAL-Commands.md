@@ -1,7 +1,8 @@
 #GDAL Commands
+The following three step process will help a GeoTIFF display clearly at multiple zoom levels:
 The following is the three step process to get a GeoTiff
 ##gdalwarp
-In this step, you need to reproject your data from any other coordinate system into WGS 1984 (EPSG 3857).
+In this step, you need to reproject your data from any other coordinate system into WGS84 Web Mercator (Auxiliary Sphere) (EPSG 3857).
 GeoServer can reproject on-the-fly, but you lose some image quality and use server resources for no real reason.
 * `-s_srs` is the EPSG code of the original GeoTIFF.
 * `-t_srs` is the desired (target) EPSG code.
