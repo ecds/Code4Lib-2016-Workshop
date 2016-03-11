@@ -80,8 +80,8 @@ georeferended map. My code is better than my spelling.-->
 
 		// Here we are pulling the archival map from GeoServer using its WMS
 		// service.
-		var wmsLayer = L.tileLayer.wms('http://52.87.207.128:8080/geoserver/Code4Lib/wms', {
-			layers: 'Code4Lib:r2fp0', // GeoServer Workspace + layer name
+		var wmsLayer = L.tileLayer.wms('https://geospatial.library.emory.edu/geoserver/ATLMaps/wms', {
+			layers: 'ATLMaps:r9jps', // GeoServer Workspace + layer name
 			format: 'image/png', // Image format
 			transparent: true, // Change this to false and just see how bad it is
 		}).addTo(map).setZIndex(10).getContainer();

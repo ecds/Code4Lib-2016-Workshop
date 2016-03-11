@@ -50,7 +50,7 @@ georeferended map. My code is better than my spelling.-->
 		<script>
 			// This is the variable that will bind an instantiate the map in a div
 			// with an`id` of `map`.
-			var map = L.map('map').setView([33.738808,-84.371631], 15);
+			var map = L.map('map').setView([33.738808,-84.371631], 16);
 
 			// Tile Layers. See the Leaflet docs for all the options
 			// http://leafletjs.com/reference.html#tilelayer
@@ -70,7 +70,7 @@ georeferended map. My code is better than my spelling.-->
 			// Note, at the end, we add it to the map. This means it will show up by
 			// default.
 			var osm = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-				maxZoom: 18,
+				// maxZoom: 18,
 				attribution: 'Map data &copy; <a href="http://openstreetmap.org">'
 				+ 'OpenStreetMap</a> contributors '
 				+ '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
