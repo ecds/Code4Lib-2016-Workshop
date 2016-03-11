@@ -4,6 +4,7 @@ Here are materials from the workshop [Getting More out of Your Maps: Georeferenc
 The slides are [available here](https://github.com/emory-libraries-ecds/Code4Lib-2016-Workshop/blob/master/Getting_More_out_of_Your_Maps.pdf).
 
 **Links of Interest**
+
 [Converting Degrees, Minutes, Seconds to Decimal Degrees](https://www.fcc.gov/media/radio/dms-decimal)
 
 Georeferencing in ArcGIS: [Tutorial 1](http://ocw.tufts.edu/data/54/626689.pdf), [Tutorial 2](http://www.s4.brown.edu/S4/Training/Modul2/Georeferencing%20and%20Digitizing%20%20in%20ArcGIS.pdf), [Tutorial 3](http://www.library.yale.edu/MapColl/files/docs/Georeferencing%20of%20Scanned%20Maps.pdf), [Tutorial 4](http://www.brocku.ca/maplibrary/Instruction/Georeferencing_Scanned_Topo_Maps.pdf)
