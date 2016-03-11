@@ -1,2 +1,2 @@
 # Code4Lib-2016-Workshop
-Material from the amazing workshop Megan and Jay did at Code4Lib 2016.
+Here are materials from the workshop [Getting More out of Your Maps: Georeferencing and Optimizing Digitized Maps for Use in Web Applications](http://2016.code4lib.org/workshops/Getting-More-out-of-Your-Maps-Georeferencing-and-Optimizing-Digitized-Maps-for-Use-in-Web-Applications) at Code4Lib 2016. We've included our slides, links to tutorials and other info, and code samples.
