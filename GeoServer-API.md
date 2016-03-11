@@ -15,6 +15,8 @@ If you haven't already, create a [GeoServer workspace](http://docs.geoserver.org
 You need to put your GeoTIFF in [GeoServer's data directory](http://docs.geoserver.org/stable/en/user/datadirectory/setting.html#datadir-setting). You might have to work with your system's admin on this. In our examples the data directory is
 `/path/to/workspaces/NameOfMyWorkspace` where `NameOfMyWorkspace` is just that; what I named my workspace.
 
+## REST examples
+
 ### Create a store for the uploaded GeoTiff
 Make a `POST` request and provide some basic data in an XML file.
 
@@ -36,7 +38,7 @@ Contents of XML file
 </coverageStore>
 ```
 
-## Create a layer from the store
+### Create a layer from the store
 This creates the layer that will be accessible to the public. We need to tell GeoServer where the the GeoTIFF
 ```
 curl –u admin:geoserver –v –XPUT –H ‘Content-type:text/plain’ \
@@ -44,7 +46,7 @@ curl –u admin:geoserver –v –XPUT –H ‘Content-type:text/plain’ \
 https://mygeoserver.org/geoserver/rest/workspaces/Code4Lib/coveragestores/external.geotiffconfigure=first
 ```
 
-## Update the store's metadata
+### Update the store's metadata
 This will fill in some metadata fields that we will supply in an XML
 
 cURL command:
