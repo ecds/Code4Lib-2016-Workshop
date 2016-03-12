@@ -1,5 +1,6 @@
 #GDAL Commands
 The following three step process will help a GeoTIFF display clearly at multiple zoom levels.
+
 Special thanks to Eric Willoughby at Georgia State University and Amanda Henley at the University of North Carolina at Chapel Hill, for helping us iron out this process.
 ##gdalwarp
 In this step, you need to reproject your data from any other coordinate system into WGS84 Web Mercator (Auxiliary Sphere) (EPSG 3857).
