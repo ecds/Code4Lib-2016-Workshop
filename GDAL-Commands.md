@@ -8,7 +8,7 @@ GeoServer can reproject on-the-fly, but you lose some image quality and use serv
 * `-s_srs` is the EPSG code of the original GeoTIFF.
 * `-t_srs` is the desired (target) EPSG code.
 * `-r` is the resampling method. We've seen the best results using `average`. Run `man gdalwarp` to see the other options.
-* Lastly provide the paths to your original GeoTIFF and the path and name of your newly warped GeoTIFF.
+* Provide the paths to your original GeoTIFF and the path and name of your newly warped GeoTIFF.
 
 ###Syntax
 ```
