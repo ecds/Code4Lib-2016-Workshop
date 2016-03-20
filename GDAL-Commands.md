@@ -30,6 +30,9 @@ This improves load time and matches the tile size used by OpenStreetMap and Goog
 
 ###Syntax
 *Note: we could reproject the map here but we would be overriding our original file.*
+
+It's best to make tiles that are 256x256 as that is the standard tile size for web mapping.
+
 ```
 gdal_translate -co 'TILED=YES/NO' -co 'BLOCKXSIZE=XXX' -co 'BLOCKYSIZE=XXX' </path/to/tmp.tif> </path/to/new.tif>
 ```
